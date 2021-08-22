@@ -2,12 +2,13 @@ package com.Geraldo.cadastroNF.resouces;
 
 import java.net.URI;
 import java.util.List;
-//import java.util.stream.Collectors;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.Geraldo.cadastroNF.domain.Cliente;
+import com.Geraldo.cadastroNF.dtos.ClienteDTO;
 import com.Geraldo.cadastroNF.service.ClienteService;
 
 @RestController
@@ -33,13 +35,22 @@ public class ClienteResource {
 		return ResponseEntity.ok().body(obj);
 	}	
 	
+	/*
 	@GetMapping
 	public ResponseEntity< List<Cliente> > findAll() {
 		
-		List<Cliente> list = service.findAll();
-		//List<ClienteDTO> listDTO = list.stream().map( obj -> new ClienteDTO(obj) ).collect( Collectors.toList() );
+		List<Cliente> list = service.findAll();	
 		
 		return ResponseEntity.ok().body(list);
+	}
+	*/	
+	@GetMapping
+	public ResponseEntity< List<ClienteDTO> > findAll() {
+		
+		List<Cliente> list = service.findAll();
+		List<ClienteDTO> listDTO = list.stream().map( obj -> new ClienteDTO(obj) ).collect( Collectors.toList() );
+		
+		return ResponseEntity.ok().body(listDTO);
 	}
 	
 	@PostMapping
@@ -55,6 +66,14 @@ public class ClienteResource {
 		
 		Cliente newObj = service.update(id, obj);
 
+		return ResponseEntity.ok().body( newObj );
+	}
+	
+	@PatchMapping(value = "/{id}")
+	public ResponseEntity<Cliente> updatePatch( @PathVariable Integer id, @RequestBody Cliente obj ) {
+		
+		Cliente newObj = service.updatePatch(id, obj);
+		
 		return ResponseEntity.ok().body( newObj );
 	}
 	
