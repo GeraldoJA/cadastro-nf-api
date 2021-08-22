@@ -30,4 +30,22 @@ public class ClienteService {
 		obj.setId(null);
 		return repository.save(obj);
 	}
+	
+	public Cliente update(Integer id, Cliente obj) {
+		
+		Cliente c = findById(id);
+		c.setRazaoSocial( obj.getRazaoSocial() );
+		c.setCNPJ( obj.getCNPJ() );
+		c.setTipoRegimeTributario( obj.getTipoRegimeTributario() );
+		c.setEmail( obj.getEmail() );
+		
+		return repository.save(c);
+	}
+
+	public void delete(Integer id) {
+		
+		findById(id);
+		repository.deleteById(id);
+	}
+	
 }
