@@ -2,6 +2,10 @@ package com.Geraldo.cadastroNF.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.Geraldo.cadastroNF.domain.Cliente;
 
 public class ClienteDTO implements Serializable {
@@ -9,6 +13,9 @@ public class ClienteDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;	
+	
+	@NotEmpty(message = "Campo RAZÃO SOCIAL é necessário")
+	@Length(min = 5, max = 50, message = "O campo RAZÃO SOCIAL deve ter entre 13 e 50 caracteres")
 	private String razaoSocial;
 	
 	// TODO Construtores

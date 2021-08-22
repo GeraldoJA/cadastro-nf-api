@@ -4,8 +4,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -21,6 +24,7 @@ import com.Geraldo.cadastroNF.domain.Cliente;
 import com.Geraldo.cadastroNF.dtos.ClienteDTO;
 import com.Geraldo.cadastroNF.service.ClienteService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/clientes")
 public class ClienteResource {
@@ -36,6 +40,8 @@ public class ClienteResource {
 	}	
 	
 	/*
+	 * outra opção de utilizar o método findAll
+	 * 
 	@GetMapping
 	public ResponseEntity< List<Cliente> > findAll() {
 		
@@ -54,7 +60,7 @@ public class ClienteResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Cliente> create( @RequestBody Cliente obj ) {
+	public ResponseEntity<Cliente> create( @Valid @RequestBody Cliente obj ) {
 		
 		obj= service.create(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand( obj.getId() ).toUri();
@@ -62,7 +68,7 @@ public class ClienteResource {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Cliente> update( @PathVariable Integer id, @RequestBody Cliente obj ) {
+	public ResponseEntity<Cliente> update( @PathVariable Integer id, @Valid @RequestBody Cliente obj ) {
 		
 		Cliente newObj = service.update(id, obj);
 
@@ -70,7 +76,7 @@ public class ClienteResource {
 	}
 	
 	@PatchMapping(value = "/{id}")
-	public ResponseEntity<Cliente> updatePatch( @PathVariable Integer id, @RequestBody Cliente obj ) {
+	public ResponseEntity<Cliente> updatePatch( @PathVariable Integer id, @Valid @RequestBody Cliente obj ) {
 		
 		Cliente newObj = service.updatePatch(id, obj);
 		

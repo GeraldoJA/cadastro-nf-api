@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Cliente implements Serializable{
@@ -17,9 +20,18 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotEmpty(message = "Campo RAZÃO SOCIAL é necessário")
+	@Length(min = 5, max = 50, message = "O campo RAZÃO SOCIAL deve ter entre 13 e 50 caracteres")
 	private String razaoSocial;
+	
+	@NotEmpty(message = "Campo CNPJ é necessário")
+	@Length(min = 13, max = 18, message = "O campo CNPJ deve ter entre 13 e 18 caracteres")
 	private String CNPJ;
+	
+	@NotEmpty(message = "Campo REGIME TRIBUTÁRIO é necessário")
+	@Length(min = 5, max = 30, message = "O campo REGIME TRIBUTÁRIO deve ter entre 5 e 30 caracteres")
 	private String TipoRegimeTributario;
+	
 	private String email;
 
 	/*
