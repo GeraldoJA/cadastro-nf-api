@@ -39,9 +39,7 @@ public class ClienteResource {
 		return ResponseEntity.ok().body(obj);
 	}	
 	
-	/*
-	 * outra opção de utilizar o método findAll
-	 * 
+	
 	@GetMapping
 	public ResponseEntity< List<Cliente> > findAll() {
 		
@@ -49,7 +47,10 @@ public class ClienteResource {
 		
 		return ResponseEntity.ok().body(list);
 	}
-	*/	
+		
+	/*
+	 * outra opção de utilizar o método findAll
+	 * 
 	@GetMapping
 	public ResponseEntity< List<ClienteDTO> > findAll() {
 		
@@ -59,6 +60,7 @@ public class ClienteResource {
 		return ResponseEntity.ok().body(listDTO);
 	}
 	
+	*/
 	@PostMapping
 	public ResponseEntity<Cliente> create( @Valid @RequestBody Cliente obj ) {
 		
