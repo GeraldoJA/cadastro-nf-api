@@ -2,10 +2,7 @@ package com.Geraldo.cadastroNF.resouces;
 
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import com.Geraldo.cadastroNF.domain.Cliente;
-import com.Geraldo.cadastroNF.dtos.ClienteDTO;
 import com.Geraldo.cadastroNF.service.ClienteService;
 
 @CrossOrigin("*")
@@ -47,20 +42,15 @@ public class ClienteResource {
 		
 		return ResponseEntity.ok().body(list);
 	}
+	
+	@GetMapping(value = "/byrazao/{razao}")
+	public ResponseEntity< List<Cliente> > findAllByName( @PathVariable String razao ) {
 		
-	/*
-	 * outra opção de utilizar o método findAll
-	 * 
-	@GetMapping
-	public ResponseEntity< List<ClienteDTO> > findAll() {
+		List<Cliente> list = service.findAllByName(razao);	
 		
-		List<Cliente> list = service.findAll();
-		List<ClienteDTO> listDTO = list.stream().map( obj -> new ClienteDTO(obj) ).collect( Collectors.toList() );
-		
-		return ResponseEntity.ok().body(listDTO);
+		return ResponseEntity.ok().body(list);
 	}
 	
-	*/
 	@PostMapping
 	public ResponseEntity<Cliente> create( @Valid @RequestBody Cliente obj ) {
 		
@@ -95,4 +85,15 @@ public class ClienteResource {
 	
 }
 
-//localhost:8080/clientes/1
+/*  
+  localhost:8080/clientes
+  obs: para buscar todos os clientes
+  
+  localhost:8080/clientes/1
+  obs: buscar o cliente de id 1
+  
+  http://localhost:8080/h2-console
+  obs: para acessar o banco de dados no perfil teste
+ */
+
+

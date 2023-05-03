@@ -2,10 +2,8 @@ package com.Geraldo.cadastroNF.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.Geraldo.cadastroNF.domain.Cliente;
 import com.Geraldo.cadastroNF.exceptions.ObjectNotFoundException;
 import com.Geraldo.cadastroNF.repositories.ClienteRepository;
@@ -24,6 +22,10 @@ public class ClienteService {
 	
 	public List<Cliente> findAll() {
 		return repository.findAll();
+	}
+	
+	public List<Cliente> findAllByName( String razao ) {
+		return repository.findAllByName(razao);
 	}
 	
 	public Cliente create(Cliente obj) {
@@ -59,7 +61,7 @@ public class ClienteService {
 	}
 
 	public void delete(Integer id) {
-		
+
 		findById(id);
 		repository.deleteById(id);
 	}
