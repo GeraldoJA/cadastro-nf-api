@@ -19,6 +19,17 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.Geraldo.cadastroNF.domain.Cliente;
 import com.Geraldo.cadastroNF.service.ClienteService;
 
+/*  
+localhost:8080/clientes
+obs: para buscar todos os clientes
+
+localhost:8080/clientes/1
+obs: buscar o cliente de id 1
+
+http://localhost:8080/h2-console
+obs: para acessar o banco de dados no perfil teste
+*/
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/clientes")
@@ -85,15 +96,6 @@ public class ClienteResource {
 	
 }
 
-/*  
-  localhost:8080/clientes
-  obs: para buscar todos os clientes
-  
-  localhost:8080/clientes/1
-  obs: buscar o cliente de id 1
-  
-  http://localhost:8080/h2-console
-  obs: para acessar o banco de dados no perfil teste
- */
+
 
 
