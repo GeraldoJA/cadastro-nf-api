@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.resouces.exceptions;
+package com.geraldo.resouces.exceptions;
 
 import javax.servlet.ServletRequest;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.Geraldo.cadastroNF.exceptions.ObjectNotFoundException;
+import com.geraldo.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {

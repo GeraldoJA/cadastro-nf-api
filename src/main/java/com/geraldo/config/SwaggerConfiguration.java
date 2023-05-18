@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.config;
+package com.geraldo.config;
 
 
 

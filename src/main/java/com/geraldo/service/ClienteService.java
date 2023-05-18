@@ -1,12 +1,13 @@
-package com.Geraldo.cadastroNF.service;
+package com.geraldo.service;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.Geraldo.cadastroNF.domain.Cliente;
-import com.Geraldo.cadastroNF.exceptions.ObjectNotFoundException;
-import com.Geraldo.cadastroNF.repositories.ClienteRepository;
+
+import com.geraldo.domain.Cliente;
+import com.geraldo.exceptions.ObjectNotFoundException;
+import com.geraldo.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {

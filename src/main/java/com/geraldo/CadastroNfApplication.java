@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF;
+package com.geraldo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

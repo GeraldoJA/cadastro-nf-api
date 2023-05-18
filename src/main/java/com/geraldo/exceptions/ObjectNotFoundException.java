@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.exceptions;
+package com.geraldo.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException {
 	

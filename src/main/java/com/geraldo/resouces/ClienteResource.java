@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.resouces;
+package com.geraldo.resouces;
 
 import java.net.URI;
 import java.util.List;
@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import com.Geraldo.cadastroNF.domain.Cliente;
-import com.Geraldo.cadastroNF.service.ClienteService;
+
+import com.geraldo.domain.Cliente;
+import com.geraldo.service.ClienteService;
 
 /*  
 localhost:8080/clientes

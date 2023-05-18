@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.resouces.exceptions;
+package com.geraldo.resouces.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

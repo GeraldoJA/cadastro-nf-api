@@ -1,12 +1,12 @@
-package com.Geraldo.cadastroNF.service;
+package com.geraldo.service;
 
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Geraldo.cadastroNF.domain.Cliente;
-import com.Geraldo.cadastroNF.repositories.ClienteRepository;
+import com.geraldo.domain.Cliente;
+import com.geraldo.repositories.ClienteRepository;
 
 @Service
 public class DBService {

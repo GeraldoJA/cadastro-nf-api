@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.domain;
+package com.geraldo.domain;
 
 import java.io.Serializable;
 import java.util.Objects;

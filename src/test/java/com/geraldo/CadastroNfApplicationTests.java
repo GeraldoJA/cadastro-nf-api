@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF;
+package com.geraldo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

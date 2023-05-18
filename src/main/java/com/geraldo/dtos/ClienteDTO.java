@@ -1,4 +1,4 @@
-package com.Geraldo.cadastroNF.dtos;
+package com.geraldo.dtos;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.Geraldo.cadastroNF.domain.Cliente;
+import com.geraldo.domain.Cliente;
 
 public class ClienteDTO implements Serializable {
 
