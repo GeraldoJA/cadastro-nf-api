@@ -53,7 +53,7 @@ public class Cliente implements Serializable{
 		}
 	}
 */
-	// TODO construtores
+
 	
 	public Cliente() {
 		super();
@@ -68,8 +68,7 @@ public class Cliente implements Serializable{
 		this.email = email;
 	}
 
-	// TODO hashCode and equals
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -87,7 +86,7 @@ public class Cliente implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
-	//TODO GETS and SETS 
+
 	
 	public Integer getId() {
 		return id;

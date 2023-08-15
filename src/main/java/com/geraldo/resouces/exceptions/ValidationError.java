@@ -7,7 +7,6 @@ public class ValidationError extends StandardError {
 
 private List<FieldMessage> errors = new ArrayList<>();
 	
-	// TODO construtores
 	
 	public ValidationError() {
 		super();
@@ -17,7 +16,6 @@ private List<FieldMessage> errors = new ArrayList<>();
 		super(timestamp, status, error);
 	}
 
-	//TODO GET and ADD 
 	
 	public List<FieldMessage> getErrors() {
 		return errors;

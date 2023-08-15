@@ -18,11 +18,11 @@ public class ClienteDTO implements Serializable {
 	@Length(min = 5, max = 50, message = "O campo RAZÃO SOCIAL deve ter entre 13 e 50 caracteres")
 	private String razaoSocial;
 	
-	// TODO Construtores
+	//Construtores
 	
 	public ClienteDTO() {
 		super();
-		// TODO Auto-generated constructor stub
+		// Auto-generated constructor stub
 	}
 
 	public ClienteDTO( Cliente obj ) {
@@ -31,7 +31,7 @@ public class ClienteDTO implements Serializable {
 		this.razaoSocial = obj.getRazaoSocial();
 	}
 
-	// TODO Gets and Sets
+	// Gets and Sets
 	
 	public Integer getId() {
 		return id;
